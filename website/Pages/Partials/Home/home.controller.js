@@ -9,7 +9,6 @@
         var vm = this;
         vm.user = null;
         vm.allUsers = [];
-
         function getCurrentUser(id) {
            console.log(id);
             userService.GetUser(id)

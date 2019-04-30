@@ -4,9 +4,7 @@ app.controller("restapiController", function ($scope ,$rootScope, $cookies, $htt
     .then(function(res) {    
         $scope.namelist = res.data;
     });
-    $rootScope.globals = $cookies.getObject("globals") || {};
-    console.log()
-    if ($rootScope.globals) {
+    if (getQueryVariable("token") != 0) {
       $scope.Login="Min Sida";console.log ("Min Sida");
     }else{
       $scope.Login="Log in";console.log ("Log in");
@@ -65,3 +63,13 @@ app.controller("ListViewController", function($scope) {
     document.getElementById("columnV").classList.remove('ActiveK');
     document.getElementById("listV").classList.add('ActiveK');
 });
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return 0;
+}
