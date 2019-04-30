@@ -1,0 +1,42 @@
+
+<div class="wrap-main-part">
+    <div>
+        <div >
+            <div>
+                <div class="col-mg-12">
+                    <table class="table table-hover">
+                        <thead>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Rating</th>
+                        </thead> 
+                        <tbody ng-repeat="item in namelist | filter:search | limitTo:rowLimits | orderBy:sortColumn">
+                            <tr>
+                                <td><img ng-src="{{ item.imagebook }}" class="list-img-top h-10" alt="..."></td>
+                                <td><h5 class="list-title">{{ item.productname }}</h5></td>
+                                <td><span
+                                    class="list-text">{{ item.price }}.00 kr</span></td>
+                                    <td><div class="stars-outer">
+                                        <div class="stars-inner" ng-style="{ 'width': rating(item.rating) }"></div>
+                                    </div></td>
+                            </tr>
+                        </tbody>   
+                    </table>
+                   
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="wrap-sides-line" class="row">
+    <div class="wrap-sides-line-dicoration col-md-2"><a href=""><i class="fas fa-arrow-left"></i></a></div>
+    <div class="wrap-sides-line-dicoration col-md-2" style="background-color:#ff8155">01</div>
+    <div class="wrap-sides-line-dicoration col-md-2" >02</div>
+    <div class="wrap-sides-line-dicoration col-md-2">...</div>
+    <div class="wrap-sides-line-dicoration col-md-2">04</div>
+    <div class="wrap-sides-line-dicoration col-md-2"><a href=""><i class="fas fa-arrow-right"></i></a></div>
+</div>

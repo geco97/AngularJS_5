@@ -1,0 +1,9 @@
+{
+    "env": {
+        "SERVER_HOST": "localhost",
+        "SERVER_PORT": 3001,
+
+        "MONGODB": "mongodb://localhost:27017/Inlamning5",
+        "PRIVATE_SECRET_KEY": "ecutbildning"
+    }
+}

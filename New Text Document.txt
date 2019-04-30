@@ -1,0 +1,4 @@
+npm install -g nodejs
+npm init
+npm install --save express
+node server.js
