@@ -1,4 +1,65 @@
+<div class="container-fluid wrap-first-box col-md-12 row">
 
+        <div class="col-md-3 wrap-first-box-parts">
+            <div><i> <a href=""><img src="website/Media/icon1.png" alt=""></a></i></div>
+            <div>
+                <strong>Free Shipping</strong>
+                <p>Order over $100</p>
+            </div>
+        </div>
+        <div class="col-md-3 wrap-first-box-parts">
+            <div><i> <a href=""><img src="website/Media/icon2.png" alt=""></a></i></div>
+            <div>
+                <strong>Free Return</strong>
+                <p>In 30 Days</p>
+            </div>
+        </div>
+        <div class="col-md-3 wrap-first-box-parts">
+            <div><i><a href=""><img src="website/Media/icon3.png" alt=""></a></i></div>
+            <div>
+                <strong>100% Secure</strong>
+                <p>Shipping</p>
+            </div>
+        </div>
+        <div class="col-md-3 wrap-first-box-parts">
+            <div><i> <a href=""><img src="website/Media/icon4.png" alt=""></a></i></div>
+            <div>
+                <strong>Best Price</strong>
+                <p>Granted</p>
+            </div>
+        </div>
+    </div>
+    <div class="wrap-second-box row">
+            <div class="col-md-2 row">
+                <div class="col-md-6"><a href="#!ColumnView"><i class="fa  fa-th" id="columnV" ></i></a></div>
+                <div class="col-md-6"><a href="#!ListView"><i class="fas fa-bars ActiveK" id="listV" ></i></a></div>
+            </div>
+            <div class="col-md-10 row" style="text-align: right">
+                <div class="col-md-7" id="showing-line">
+                    <span class="text-dark">Showing</span>
+                    <select ng-model="rowLimits" ng-options="rowLimitArra.id as rowLimitArra.name for rowLimitArra in rowLimitArr ">
+                       
+                    </select>
+                    <span  class="text-dark">of 30 results</span>
+                </div>
+                <div class="col-md-5" id="sort-part">
+                     <select class="dropdown" id="sortby" ng-model="sortColumn"  name="selectSort">
+                            <option value="" disabled selected>Sort by</option> 
+                            <option value="productname">Produkt</option>
+                            <option value="rating">rating</option>
+                            <option value="price">Pris</option>
+                        </select>
+                
+                    <div class="input-group"  id="search-part">
+                        <input id="search" type="search" placeholder="Search from here" ng-model='searchText'>
+                        <span class="input-group-addon"><i class="fas fa-search"></i></span>
+                    </div>
+                </div>
+            </div>
+        
+        
+        
+        </div>
 <div class="wrap-main-part">
     <div>
         <div >
@@ -11,8 +72,8 @@
                             <th>Price</th>
                             <th>Rating</th>
                         </thead> 
-                        <tbody ng-repeat="item in namelist | filter:search | limitTo:rowLimits | orderBy:sortColumn">
-                            <tr>
+                        <tbody >
+                            <tr ng-repeat="item in namelist | filter:search | limitTo:rowLimits | orderBy:sortColumn">
                                 <td><img ng-src="{{ item.imagebook }}" class="list-img-top h-10" alt="..."></td>
                                 <td><h5 class="list-title">{{ item.productname }}</h5></td>
                                 <td><span

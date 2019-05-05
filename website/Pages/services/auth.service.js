@@ -29,7 +29,8 @@
 
             $http.defaults.headers.common["Authorization"] = "Bearer " + token;
             var cookieExp = new Date();
-            cookieExp.setDate(cookieExp.getDate() + 7);
+            //cookieExp.setDate(cookieExp.getDate() + 7);
+            cookieExp.setSeconds(cookieExp.getSeconds() + 3600); 
 
             $cookies.putObject("globals", $rootScope.globals, { expires: cookieExp });
 

@@ -2,20 +2,12 @@
 
 
 <h1>Hi {{vm.user[0].firstname}} {{vm.user[0].lastname}}!</h1>
-<p><a href="#!/Login" class="btn btn-primary">Logout</a>
-<a href="http://localhost:5500?token={{vm.user[0]._id}}" class="btn btn-primary">HemSida</a></p>
+<p><a  ng-click="Logout(vm.user[0])" class="btn btn-primary">Logout</a>
 
 <br>
     
 
 <style>
-p a {
-    float: right;
-}
-
-h1{
-    color: blue;
-}
 
 </style>
 
