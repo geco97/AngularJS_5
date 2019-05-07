@@ -108,7 +108,6 @@
 
         $rootScope.$on("$locationChangeStart", function(event, next, current) {
             var restrictedPage = $.inArray($location.path(), ["/Login", "/Register","/ListView","/ColumnView"]) === -1;
-            console.log(restrictedPage);
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
                 $location.path("/");
