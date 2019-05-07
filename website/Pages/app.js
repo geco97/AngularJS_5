@@ -69,6 +69,15 @@
                 templateUrl: "website/views/ColumnView.html",
                 controller: "GridViewController" 
             })
+            .when("/ColumnView", { 
+                templateUrl: "website/views/ColumnView.html",
+                controller: "GridViewController" 
+            })
+        
+            .when("/ListView", { 
+                templateUrl: "website/views/ListView.html",
+                controller: "ListViewController" 
+            })
             .when("/Login", {
                 controller: "loginController",
                 templateUrl: "website/Pages/Partials/Login/login.view.html",
@@ -84,15 +93,7 @@
                 templateUrl: "website/Pages/Partials/Register/register.view.html",
                 controllerAs: "vm"                
             })
-            .when("/ColumnView", { 
-                templateUrl: "website/views/ColumnView.html",
-                controller: "GridViewController" 
-            })
-        
-            .when("/ListView", { 
-                templateUrl: "website/views/ListView.html",
-                controller: "ListViewController" 
-            })
+           
             .otherwise({ redirectTo: "/" });            
     }
 
@@ -106,8 +107,8 @@
         }
 
         $rootScope.$on("$locationChangeStart", function(event, next, current) {
-            var restrictedPage = $.inArray($location.path(), ["/Login", "/Register"]) === -1;
-            
+            var restrictedPage = $.inArray($location.path(), ["/Login", "/Register","/ListView","/ColumnView"]) === -1;
+            console.log(restrictedPage);
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
                 $location.path("/");
